@@ -1,3 +1,4 @@
+# import libraries, packages
 library(tidyverse)
 library(cluster)
 library(factoextra)
@@ -9,6 +10,8 @@ library(ggthemes)
 library(dplyr)
 install.packages("Rtsne")
 library(Rtsne)
+
+
 gower_dist <- daisy(student.mat, metric = "gower")
 gower_mat <- as.matrix(gower_dist)
 student.mat[which(gower_mat == min(gower_mat[gower_mat != min(gower_mat)]), arr.ind = TRUE) [1, ], ]
